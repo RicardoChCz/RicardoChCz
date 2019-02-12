@@ -1,0 +1,164 @@
+@import "../../styles/variables.scss";
+
+#particles-js{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #063256;
+  background-image: linear-gradient(to bottom right , #031634, $primary);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+h1.home{
+  color: $light;
+  font-size: 4em;
+}
+
+p.description{
+  text-align: right;
+  font-size: 1.2em;
+  font-weight: 100;
+}
+
+div.animations{
+  position: absolute;
+  left: 0px;
+  top:0px;
+  z-index: 3;
+  width: 100%;
+  height: 100vh;
+}
+
+div.linea {
+  width: 6px;
+  height: 240px;
+  background-color: $secondary;
+  position: relative;
+  left: calc(50% - 3px);
+  top:calc(50% - 120px);
+  -webkit-animation-name: movimiento;
+  -webkit-animation-duration: 3s;
+  animation-name: movimiento;
+  animation-duration: 3s;
+}
+
+div.linea-b{
+  width: 6px;
+  height: 240px;
+  background-color: $secondary;
+  position: relative;
+  left: calc(50% - 3px);
+  top:calc(50% - 120px);
+  -webkit-animation-name: movimiento2-b;
+  -webkit-animation-duration: 3s;
+  animation-name: movimiento2-b;
+  animation-duration: 3s;
+}
+
+
+div.linea2 {
+  width: 100%;
+  height: 100%;
+  background-color: #00091a;
+  opacity: $opacity;
+  position: relative;
+  left: 0px;
+  top:0px;
+  -webkit-animation-name: movimiento2;
+  -webkit-animation-duration: 2s;
+  animation-name: movimiento2;
+  animation-duration: 2s;
+}
+
+
+#home{
+  -webkit-transition: opacity 0.8s; /* Safari */
+  transition: opacity 0.8s;
+  -webkit-transition-delay: 1.2s; /* Safari */
+  transition-delay: 1.2s;
+}
+.scroll{
+  width: 120px;
+  height: auto;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transition: opacity 0.8s; /* Safari */
+  transition: opacity 0.8s;
+  -webkit-transition-delay: 0.4s; /* Safari */
+  transition-delay: 0.4s;
+}
+
+/* ANIMATION KEYFRAMES*/
+@keyframes movimiento {
+  0%   {background-color:$primary; height: 100px; top:0px;}
+  50% {background-color:$light; height:calc(50% + 120px); top:0px;}
+  100% {background-color:$secondary; height:240px; top:calc(50% - 120px);}
+}
+
+
+@keyframes movimiento2 {
+  0% {
+    background-color:$secondary; 
+    height:240px; 
+    top:calc(50% - 120px);
+    width: 6px;
+    left: calc(50% - 3px);
+    top:calc(50% - 120px);
+    opacity: 1;
+  }
+  70% {
+    height: 100%;
+    width: 6px;
+    background-color: $light;
+    left: calc(50% - 3px);
+    top:0px;
+    opacity: 1;
+   }
+  100% { 
+    opacity:$opacity; 
+    left:0; 
+    background-color:$dark; 
+    width: 100%; 
+    border:0px
+  }
+}
+
+@keyframes movimiento2-b {
+  0% { 
+    border: 0px; 
+    width: 100%; 
+    height: 100%; 
+    left: 0; 
+    top:0; 
+    background-color:$dark; 
+    opacity:$opacity
+  }
+
+  30% {
+    width: 6px;
+    top: 0px;
+    height: 100%;
+    background-color: $light;
+    left: calc(50% - 3px);
+  }
+
+  100% {
+    background-color:$secondary; 
+    height:240px; 
+    top:calc(50% - 120px);
+    width: 6px;
+    left: calc(50% - 3px);
+    top:calc(50% - 120px);
+  }
+
+}
+    
+  

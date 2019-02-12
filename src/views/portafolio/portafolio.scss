@@ -1,0 +1,59 @@
+.proyect{
+  max-width: 1110px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+@mixin gadget-wrapper($max) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0px 20px;
+  height: auto;
+  max-width: $max;
+}
+
+.mac-wrapper{
+  @include gadget-wrapper(830px);
+}
+
+.iphone-wrapper{
+  @include gadget-wrapper(270px);
+}
+
+.mac-mask{
+  width: 100%;
+  height: auto;
+ }
+ .iphone-mask{
+  width: 100%;
+  height: auto;
+ }
+ .background-mask{
+  background-color: black;
+  width: calc(78% - 40px);
+  height: 84%;
+  position: absolute;
+  right: calc(11% + 20px);
+  top: 5%;
+  z-index: -1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.iphonescreen-mask{
+  background-color: black;
+  width: calc(98% - 40px);
+  height: 98%;
+  border-radius: 45px;
+  position: absolute;
+  right: calc(1% + 20px);
+  top: 1%;
+  z-index: -1;
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+

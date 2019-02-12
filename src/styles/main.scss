@@ -1,0 +1,295 @@
+@import "variables.scss";
+@import "animate.scss";
+@import "icon.css";
+@import "../views/home/home.scss";
+@import "../views/portafolio/portafolio.scss";
+@import "../views/contact/contact.scss";
+@import "../views/skills/skills.scss";
+
+/* =============================================================================
+   My CSS
+   ========================================================================== */
+.header{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  padding: 15px;
+  width: 100%
+}
+.menu{
+  float: right;
+   li {
+     display: inline;
+   }
+   a {
+     padding:20px 0px 20px 20px;
+     color: $light;
+     font-weight: 100;
+   }
+ }
+
+.logo a{
+  color: $light;
+  font-size: 1.2em;
+}
+
+.basic-opacity{
+  background-color: $dark;
+  width: 100%;
+  height: 100%;
+  display: table;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: $opacity;
+  z-index: -1;
+}
+
+.outter{
+  position: absolute;
+  display: table;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: -1;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.inner {
+  max-width: 600px;
+  margin: auto;
+  padding: 15px;
+}
+
+/* ---- base ---- */
+h3{
+ font-weight: 100;
+ font-size: 1.2em;
+ margin-bottom: 10px;
+ border-bottom: 1px solid rgba(255, 255, 255, .5);
+}
+
+body{
+  font-family: 'Lato', sans-serif;
+  color: $light;
+}
+p{
+  font-weight: 100;
+  font-size: 0.9em;
+  line-height: 1.2em;
+}
+/***/
+
+
+
+/* ---- particles.js container ---- */
+   
+
+   .icon-linkedin:before {color:$light!important}
+   .icon-whatsapp:before {color:$light!important}
+   .icon-twitter:before {color:$light!important}
+   
+   .social-media{
+     position: fixed;
+     bottom: 0px;
+     right: 0px;
+     z-index: 100;
+   }
+   .social-media li {
+     display: inline-block;
+     padding: 15px 7.5px;
+     font-size: 20px;
+   }
+   .social-media ul{
+     margin-right: 7.5px;
+   }
+   
+   
+   h1{
+     color: $light;
+     text-align: right;
+     font-size-adjust: auto;
+     font-size: 4em;
+   }
+   
+   h2{
+     font-size: 2em;
+     font-weight: bold;
+     margin-bottom: 20px;
+   }
+   
+   
+   .me-photo{
+     float: right;
+     border-radius: 50%;
+   }
+   
+   
+   .big-portafolio{
+     opacity: 1;
+     max-height:80%;
+   }
+   .inner-large {
+     max-width: 1250px;
+     margin: auto;
+     padding: 15px;
+   }
+   ul.portafolio-grid>li{
+     height: 100px;
+     width: 100px;
+     float: left;
+     margin: 10px;
+   }
+   ul.portafolio-grid>li>img{
+     height: 100px;
+     width: 100px;
+     object-fit: cover;
+   }
+   
+   @keyframes circle-to-full {
+     0% {
+       width: 80px;
+       height: 80px;
+       background-color: #063256;
+       border-radius: 50%;
+       border:2px solid $primary;
+       padding: 20px;
+       text-align: center;
+       z-index: 500;
+       margin:20px;
+       position: absolute;
+     }
+     65%{
+       width: 100vw;
+       height: 100vh;
+     }
+     80%{
+       position: fixed;
+       top:0px!important;
+       left:0px!important;
+     }
+   
+     100% {
+       border:0;
+       opacity: 0.6;
+       background-color: $dark;
+     }
+   }
+   
+   .animated-circle{
+     width: 80px;
+     height: 80px;
+     background-color: #063256;
+     border-radius: 50%;
+     border:2px solid $primary;
+     padding: 20px;
+     text-align: center;
+     margin:20px;
+     z-index: 500;
+     position: absolute;
+   }
+
+   .full{
+     position: fixed;
+     top:0px!important;
+     left:0px!important;
+     width: 100%;
+     height: 100%;
+     border-radius: 0;
+     border:0;
+     opacity: 0.6;
+     background-color: $dark;
+     -webkit-animation-name: circle-to-full;
+     -webkit-animation-duration: 20s;
+     animation-name: circle-to-full;
+     animation-duration: 20s;
+   }
+   .full>span{
+     display: none;
+   }
+     
+   @keyframes float {
+     0% {
+       transform: translatey(0px);
+       transform: translatex(-10px);
+     }
+     50% {
+       transform: translatey(-10px);
+       transform: translatex(-10px);
+     }
+     100% {
+       transform: translatey(0px);
+       transform: translatex(0px);
+     }
+   }
+   
+   
+   .animated-circle>span{
+     color:$light;
+     font-size: 25px;
+   }
+   
+   .circles{
+     max-width: 80%;
+     position: relative;
+     margin-left: 30px;
+     margin-top: 30%;
+     height: 50%;
+     background: #000;
+     display: none;
+   }
+   .swiper-pagination-bullet-active{
+    background: white;
+  }
+  
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+   
+
+   @media screen and (max-width: 768px) {
+     div.linea{
+     left: calc(100% - 15px);
+     -webkit-animation-name: movimiento2;
+     -webkit-animation-duration: 4s;
+     animation-name: movimiento2;
+     animation-duration: 4s;
+     }
+     .top {
+         color: $light;
+         margin-right: 15px;
+         text-align: right;
+     }
+     
+     h1{
+         font-size: 2.5em;
+     }
+             
+   }
