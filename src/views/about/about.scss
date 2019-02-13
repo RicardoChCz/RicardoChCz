@@ -1,0 +1,92 @@
+@import "../../styles/variables.scss";
+
+.about-slide{
+  max-width: 550px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.me-photo{
+  float: right;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+.time-line{
+  position: absolute;
+  padding-bottom: 25px;
+}
+.time-line::after{
+  background-color: $light;
+  content: " ";
+  height: 100%;
+  left: 49.9%;
+  position: absolute;
+  top: 0;
+  width: 1px;
+  z-index: 0;
+}
+.date{
+ font-size: 0.9em;
+}
+.job-position{
+  font-weight: 400;
+  color:$primary;
+}
+.company{
+  font-size: 0.8em;
+  font-weight: 400;
+}
+
+.job-description{
+  font-weight: 100;
+  font-size: 0.8em;
+  margin-bottom: 15px;
+  text-align: left;
+}
+.exp-bullet{
+  text-align: right;
+}
+.exp-bullet:after{
+  background: $secondary;
+  content: " ";
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  right: -5px;
+  top: 0px;
+  width: 12px;
+  z-index: 1;
+}
+.who-am-i{
+  font-size:1.1em;
+  line-height: 1.2em;
+  margin-bottom: 15px;
+}
+.more-about-me{
+  font-size: 0.9em;
+  line-height: 1em;
+}
+.current{
+  background-color: $secondary;
+  font-size: 0.8em;
+  padding: 1px 5px;
+  color: $dark;
+  font-weight: 500;
+  border-radius: 3px;
+  margin-left: 8px
+}
+.current::before{
+  border-color: transparent $secondary;
+  border-style: solid;
+  border-width: 9px 7px 9px 0;
+  content: "";
+  display: block;
+  right: 69px;
+  position: absolute;
+  top: 2px;
+  width: 0;
+  z-index: 0;
+}

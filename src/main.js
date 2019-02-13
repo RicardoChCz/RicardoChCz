@@ -23,10 +23,10 @@ class Main extends Component {
             <span className="logo"><NavLink to="/">RicardoChCz</NavLink></span>
             <ul className="menu">
               <li><NavLink to="/about">About me</NavLink></li>
-              <li><NavLink to="/skills">Skills</NavLink></li>
               <li><NavLink to="/portafolio">Portafolio</NavLink></li>
-              <li><a href="http://localhost:8888/blog">Blog</a></li>
+              <li><NavLink to="/skills">Skills</NavLink></li>
               <li><NavLink to="/contact">Contact</NavLink></li>
+              <li><a href="http://localhost:8888/blog">Blog</a></li>
             </ul>
           </div>
 
