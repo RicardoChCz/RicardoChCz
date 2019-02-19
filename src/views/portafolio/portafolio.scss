@@ -1,13 +1,5 @@
-
-.proyect{
-  max-width: 1110px;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  left: 50%;
-  transform: -50px;
-  transform: translate(-50%, -0);
+.swiper-slide{
+  overflow: hidden;
 }
 
 @mixin gadget-wrapper($max) {
@@ -19,9 +11,10 @@
   padding: 0px 20px;
   height: auto;
   max-width: $max;
+  z-index: 2;
 }
 .mac-wrapper{
-  @include gadget-wrapper(40%);
+  @include gadget-wrapper(600px);
 }
 .iphone-wrapper{
   @include gadget-wrapper(270px);
@@ -58,16 +51,24 @@
   background-size: cover;
 }
 
-.proyect-description{
+@mixin construct-left-portafolio-section($index){
   padding-top: 80px;
   width: calc(100% - 450px);
   left:0;
   position: absolute;
   top: 0px;
-  background-color: $dark;
   height: 100%;
-  z-index:-1;
-  border-right: 6px solid $primary;
+  z-index: $index;
+}
+
+.proyect-description{
+  @include construct-left-portafolio-section(1)
+}
+
+.solid-left-back{
+  background-color: $dark;
+  border-right: 4px solid $primary;
+  @include construct-left-portafolio-section(-1)
 }
 
 .description-container{
@@ -75,8 +76,8 @@
   max-width: 450px;
   margin: auto;
   width: 100%;
+  text-align: center;
   li{
-    font-weight: 300;
     list-style-type: disc;
     color: white;
     display: inherit;
@@ -85,8 +86,13 @@
   p{
     margin-bottom: 10px;
   }
+  a{
+    color: $primary;
+    font-weight: $bold;
+    cursor: pointer;
+  }
 }
-@mixin side-bar($backgroundcolor, $textcolor, $border){
+@mixin construct-bar($backgroundcolor, $textcolor, $border){
   padding-top: 80px;
   max-width: 450px;
   width: 100%;
@@ -96,51 +102,55 @@
   background-color: $backgroundcolor;
   height: 100%;
   z-index:20;
-  border-left: 6px solid $border;
+  border-left: 4px solid $border;
   -webkit-transition: right 1s; /* For Safari 3.1 to 6.0 */
   transition: right 1s;
   h2{
     color: $textcolor;
-    font-weight: 1.5em;
-    font-weight: 400;
   }
   p{
     color:$textcolor;
-    font-weight: 300;
     text-align: left;
   }
   li{
     color: $textcolor
   }
 }
-.show-bar{
-  cursor: pointer;
-  position: absolute;
-  right: 450px;
-  z-index: 1000;
-  bottom: 30px;
-  background-color: $primary-dark;
-  color: $light;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  /*
-  font-size: 2.8em;
-  padding: 1px 11px;
-  */
-  font-size: 2.3em;
-  padding: 0px 9px;
-  border:4px solid $primary;
-  
-  transform: translateX(20px);
-  span{
-    line-height: 0px;
+
+.proyect-details{
+  display: none;
+  @include construct-bar($primary-dark, $light, $primary)
+}
+
+.sidebar{
+  .fadelayer{
+    background-color: $dark;
+    opacity: $opacity;
+    width: 0px;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 2;
+    -webkit-transition: width 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: width 0.5s;
   }
 }
 
-.proyect-details-secondary{
-  @include side-bar($secondary, $dark, $dark)
+.with-sidebar{
+  .fadelayer{
+    width: 100%;
+  }
+  .proyect-details{
+    display: block;
+    right: 0px;
+  }
 }
-.proyect-details-primary{
-  @include side-bar($primary, $light, $dark)
+
+.close-bar-button{
+  cursor: pointer;
+  color: $light;
+  font-size: 2.3em;
+  padding: 20px;
+  color: $primary;
 }

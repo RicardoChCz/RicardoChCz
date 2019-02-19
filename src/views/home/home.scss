@@ -23,8 +23,21 @@ h1.home{
 p.description{
   text-align: right;
   font-size: 1.2em;
-  font-weight: 100;
+  font-weight: $regular;
 }
+
+.scroll{
+  width: 120px;
+  height: auto;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* =======================================================================
+ANIMATIONS
+========================================================================== */
 
 div.animations{
   position: absolute;
@@ -35,34 +48,47 @@ div.animations{
   height: 100vh;
 }
 
-div.linea {
+.disapear-content{
+  #home-text{
+    opacity: 0;
+    -webkit-transition: opacity 0.8s; /* Safari */
+    transition: opacity 0.8s;
+    -webkit-transition-delay: 1.2s; /* Safari */
+    transition-delay: 1.2s;
+  }
+  .scroll{
+    opacity: 0;
+    -webkit-transition: opacity 0.8s; /* Safari */
+    transition: opacity 0.8s;
+    -webkit-transition-delay: 0.4s; /* Safari */
+    transition-delay: 0.4s;
+  }
+}
+
+/*SLIDE IN*/
+@mixin line-animation($transition){
   width: 6px;
   height: 240px;
   background-color: $secondary;
   position: relative;
   left: calc(50% - 3px);
   top:calc(50% - 120px);
-  -webkit-animation-name: movimiento;
+  -webkit-animation-name: $transition;
   -webkit-animation-duration: 3s;
-  animation-name: movimiento;
+  animation-name: $transition;
   animation-duration: 3s;
 }
-
-div.linea-b{
-  width: 6px;
-  height: 240px;
-  background-color: $secondary;
-  position: relative;
-  left: calc(50% - 3px);
-  top:calc(50% - 120px);
-  -webkit-animation-name: movimiento2-b;
-  -webkit-animation-duration: 3s;
-  animation-name: movimiento2-b;
-  animation-duration: 3s;
+div.initial-line {
+  @include line-animation(slideInFromTop)
+}
+@keyframes slideInFromTop {
+  0%   {background-color:$primary; height: 100px; top:0px;}
+  50% {background-color:$light; height:calc(50% + 120px); top:0px;}
+  100% {background-color:$secondary; height:240px; top:calc(50% - 120px);}
 }
 
-
-div.linea2 {
+/* FULL OPACITIY*/
+div.full-opacity {
   width: 100%;
   height: 100%;
   background-color: #00091a;
@@ -70,41 +96,12 @@ div.linea2 {
   position: relative;
   left: 0px;
   top:0px;
-  -webkit-animation-name: movimiento2;
+  -webkit-animation-name: lineToFull;
   -webkit-animation-duration: 2s;
-  animation-name: movimiento2;
+  animation-name: lineToFull;
   animation-duration: 2s;
 }
-
-
-#home{
-  -webkit-transition: opacity 0.8s; /* Safari */
-  transition: opacity 0.8s;
-  -webkit-transition-delay: 1.2s; /* Safari */
-  transition-delay: 1.2s;
-}
-.scroll{
-  width: 120px;
-  height: auto;
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  -webkit-transition: opacity 0.8s; /* Safari */
-  transition: opacity 0.8s;
-  -webkit-transition-delay: 0.4s; /* Safari */
-  transition-delay: 0.4s;
-}
-
-/* ANIMATION KEYFRAMES*/
-@keyframes movimiento {
-  0%   {background-color:$primary; height: 100px; top:0px;}
-  50% {background-color:$light; height:calc(50% + 120px); top:0px;}
-  100% {background-color:$secondary; height:240px; top:calc(50% - 120px);}
-}
-
-
-@keyframes movimiento2 {
+@keyframes lineToFull {
   0% {
     background-color:$secondary; 
     height:240px; 
@@ -131,7 +128,64 @@ div.linea2 {
   }
 }
 
-@keyframes movimiento2-b {
+@keyframes lineToFullM {
+  0% {
+    background-color:$secondary; 
+    height:240px; 
+    top:calc(50% - 120px);
+    width: 6px;
+    left: calc(100% - 15px);
+    top:calc(50% - 120px);
+    opacity: 1;
+  }
+  70% {
+    height: 100%;
+    width: 6px;
+    background-color: $light;
+    left: calc(100% - 15px);
+    top:0px;
+    opacity: 1;
+   }
+  100% { 
+    opacity:$opacity; 
+    left:0; 
+    background-color:$dark; 
+    width: 100%; 
+    border:0px
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .scroll{
+    display: none;
+  }
+  .initial-line{
+    left: calc(100% - 15px)!important;
+  }
+  #home-text{
+    h1{
+      margin-right: 15px;
+      font-size: 3em;
+    }
+    p{
+      margin-right:15px;
+      font-size: 0.9em;
+    }
+  }
+  div.full-opacity {
+    -webkit-animation-name: lineToFullM;
+    -webkit-animation-duration: 2s;
+    animation-name: lineToFullM;
+    animation-duration: 2s;
+  }
+}
+
+/*
+div.go-back-line{
+  @include line-animation(fromFullToOriginal)
+}
+
+@keyframes fullToLine {
   0% { 
     border: 0px; 
     width: 100%; 
@@ -158,7 +212,6 @@ div.linea2 {
     left: calc(50% - 3px);
     top:calc(50% - 120px);
   }
-
 }
-    
-  
+
+*/

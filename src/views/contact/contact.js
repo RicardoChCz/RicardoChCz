@@ -7,10 +7,46 @@ class Contact extends Component {
       <div className="basic-opacity"></div>
       <div className="outter">
         <div className="middle">
-          <div className="inner">
-            <div className="row">
-              <h2 style={{marginBottom: 15}}>Skills</h2>
-              <div className="col-sm-4 scene first-card">
+          <div className="inner" style={{maxWidth:700}}>
+            <div className="row contact-me">
+              <h4>Contact me</h4>
+              <div className="row">
+                <div className="col-sm-4">
+                  <div className="card">
+                    <h5> Phone </h5>
+                    <p> +52 44 33 06 23 90</p>
+                    <span className="icon-phone"></span>
+                  </div>
+                </div>
+                <div className="col-sm-4">
+                  <div className="card">
+                    <h5>Email </h5>
+                    <p> ricardo.ch.cz@gmail.com</p>
+                    <span className="icon-envelope"></span>
+                  </div>
+                </div>
+                <div className="col-sm-4">
+                  <div className="card">
+                    <h5> Location </h5>
+                    <p> Morelia, Mich</p>
+                    <span className="icon-map-marker"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    );
+  }
+}
+ 
+export default Contact;
+
+      /*
+       <div className="col-sm-4 scene first-card">
                 <div className="panel skills-card">
                   <div className="body-card">
                     <span className="icon-phone"></span>
@@ -33,20 +69,7 @@ class Contact extends Component {
                   </div>
                 </div>
               </div>
-            
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    );
-  }
-}
- 
-export default Contact;
-
-      /*
+              
       <div>
         <div className="basic-opacity"></div>
         <div className="outter">

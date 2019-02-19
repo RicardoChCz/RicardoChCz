@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import mePhoto from "../../assets/images/RCC.jpeg";
 import Swiper from "react-id-swiper";
+import $ from 'jquery';
 
 var jobs=[
   {"initialDate":"March 2018",
@@ -26,7 +27,7 @@ var schools=[
   },
   {"initialDate":"Aug 2011",
    "finalDate":"June 2016",
-   "jobTitle":"B.S in Physical and Mathematical Sciences",
+   "jobTitle":"B.S in Physics and Mathematics",
    "company":"UMSNH",
    "description":"Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt labore et dolore magna aliqua."
   }
@@ -38,15 +39,15 @@ class Introduction extends Component{
       <div className="about-slide">
         <div className="outter">
           <div className="middle">
-            <div className="row">
+            <div className="row fadeIn animated">
               <div className="col-sm-5">
                 <img src={mePhoto} className="me-photo"/>
               </div>
               <div className="col-sm-7">
-                <h2 className="">Hi!</h2>
+                <h2 className="shake animated">Hi!</h2>
                 <p className="who-am-i">
                   I'm Ricardo Chávez, a <strong> Mathematician </strong> with <strong>Frontend</strong> skills, 
-                  intrested in <strong>Data science</strong>.
+                  intrested in Data science.
                 </p>
               </div>
             </div>
@@ -102,8 +103,27 @@ class Timeline extends Component{
   }
 }
 
-
 class About extends Component {
+  componentDidMount(){
+    var p = 0
+    $(window).bind('mousewheel', function(event) {
+      if (event.originalEvent.wheelDelta >= 0) {
+        if(p>0){p--;}
+      }
+      else {
+        if(p<5){p++;}
+      }
+
+      if ($("#about").length){
+        if(p==0){
+          $("#about")[0].className = "disapear-content";
+          setTimeout(function(){ 
+            window.location = "/#/" }, 
+            1000);
+          }
+        }
+    });
+  }
 
   render() {
     const params = {
@@ -122,9 +142,9 @@ class About extends Component {
     }
 
     return (
-      <div>
-        <div className="basic-opacity"></div>
-        <div style={{position:'absolute', top:0, left:0, width:"100%", height:"100%"}}>
+      <div id="about">
+        <div className="basic-opacity about-content"></div>
+        <div className="about-content">
           <Swiper {...params}>
             <div><Introduction/></div>
             <div><Timeline title="Experience" cvList={jobs}/></div>

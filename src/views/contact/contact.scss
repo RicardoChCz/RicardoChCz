@@ -11,14 +11,53 @@
   color: white
 }
 
-label{
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: $primary
-}
-
 .btn-primary {
   color: #fff;
   background-color: $primary;
   border-color: #357ebd;
+}
+
+.contact-me{
+  h4{
+    text-align: center;
+  }
+  h5{
+    color: $primary;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+  p{
+    margin-bottom: 15px;
+    font-weight: $thin;
+  }
+  span{
+    color:$secondary;
+    font-size: 22px;
+    margin: auto;
+  }
+  span.icon-envelope{
+    font-size: 20px;
+  }
+  .card{
+    margin: 0px auto 20px;
+    max-width: 350px;
+    text-align: center;
+    padding: 15px 15px 20px;
+    border:1px solid rgba($light,0.4);
+    -webkit-transition: background-color 0.5s; /* Safari */
+    transition: background-color 0.5s;
+  }
+  .card:hover{
+    background-color: $primary-dark;
+    border-color: $light;
+    h5{
+      color:$secondary;
+    }
+    p{
+      color:$light;
+    }
+    span{
+      color: $primary
+    }
+  }
 }

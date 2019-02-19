@@ -20,13 +20,28 @@ class Main extends Component {
       <HashRouter>
         <div>
           <div className="header">
-            <span className="logo"><NavLink to="/">RicardoChCz</NavLink></span>
+            <span className="logo">
+              <NavLink to="/">
+                <span className="icon-home"></span>
+                <span className="tag">RicardoChCz</span>
+              </NavLink>
+            </span>
             <ul className="menu">
-              <li><NavLink to="/about">About me</NavLink></li>
-              <li><NavLink to="/portafolio">Portafolio</NavLink></li>
-              <li><NavLink to="/skills">Skills</NavLink></li>
-              <li><NavLink to="/contact">Contact</NavLink></li>
-              <li><a href="http://localhost:8888/blog">Blog</a></li>
+              <li>
+                <NavLink to="/about">About me</NavLink>
+              </li>
+              <li>
+                <NavLink to="/skills">Skills</NavLink>
+              </li>
+              <li>
+                <NavLink to="/portafolio">Portafolio</NavLink>
+              </li>
+              <li>
+                <a href="http://localhost:8888/blog">Blog</a>
+              </li>
+              <li>
+                <NavLink to="/contact">Contact</NavLink>
+              </li>
             </ul>
           </div>
 
@@ -46,3 +61,39 @@ class Main extends Component {
 }
  
 export default Main;
+
+
+/*
+              <li>
+                <NavLink to="/about">
+                  <span className="icon-user"></span> 
+                  <span className="tag"> About me</span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/skills">
+                  <span className="icon-gears"></span> 
+                  <span className="tag"> Skills </span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/portafolio">
+                  <span className="icon-suitcase"></span> 
+                  <span className="tag"> Portafolio</span>
+                </NavLink>
+              </li>
+              <li>
+                <a href="http://localhost:8888/blog">
+                  <span className="icon-newspaper-o"></span> 
+                  <span className="tag"> Blog </span>
+                </a>
+              </li>
+              <li>
+                <NavLink to="/contact">
+                  <span className="icon-phone"></span> 
+                  <span className="tag"> Contact </span>
+                </NavLink>
+              </li>
+
+
+*/

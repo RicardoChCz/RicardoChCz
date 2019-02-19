@@ -30,21 +30,23 @@
 }
 .date{
  font-size: 0.9em;
+ font-weight: $regular;
+ color:$primary;
 }
 .job-position{
-  font-weight: 400;
-  color:$primary;
+  font-weight: $bold;
+  color:$secondary;
 }
 .company{
-  font-size: 0.8em;
-  font-weight: 400;
+  font-size: 0.9em;
+  font-weight: $regular;
 }
 
 .job-description{
-  font-weight: 100;
-  font-size: 0.8em;
+  font-size: 0.75em;
   margin-bottom: 15px;
   text-align: left;
+  font-weight: $thin;
 }
 .exp-bullet{
   text-align: right;
@@ -64,6 +66,7 @@
   font-size:1.1em;
   line-height: 1.2em;
   margin-bottom: 15px;
+  font-weight: 100;
 }
 .more-about-me{
   font-size: 0.9em;
@@ -72,21 +75,70 @@
 .current{
   background-color: $secondary;
   font-size: 0.8em;
-  padding: 1px 5px;
+  padding: 1.5px 7px;
   color: $dark;
-  font-weight: 500;
+  font-weight: $regular;
   border-radius: 3px;
   margin-left: 8px
 }
 .current::before{
   border-color: transparent $secondary;
   border-style: solid;
-  border-width: 9px 7px 9px 0;
+  border-width: 9px 8px 9px 0;
   content: "";
   display: block;
-  right: 69px;
+  right: 70px;
   position: absolute;
   top: 2px;
   width: 0;
   z-index: 0;
+}
+
+.about-content{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
+.disapear-content{
+  .about-content{
+    opacity: 0;
+    -webkit-transition: opacity 1s; /* Safari */
+    transition: opacity 1s;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .me-photo{
+    float: none;
+    max-width: 40vw;
+    max-height: 40vw;
+    margin-bottom: 20px;
+  }
+  .job-description {
+    text-align: right;
+    max-width: 300px;
+    margin-top: 6px;
+    margin-bottom: 20px;
+    float: right;
+  }
+  .time-line::after{
+    left: auto;
+    right: -15px;
+  }
+  .time-line{
+    padding: 0;
+    position: relative;
+    max-width: 90%;
+    left: 50%;
+    transform: translateX(calc(-50% - 10px));
+  }
+  .about-slide{
+    h4{
+      text-align: right;
+      margin-right: 10px;
+    }
+  }
 }

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'ricardochcz';
-  src:  url('./../assets/fonts/ricardochcz.eot?r8ql2u');
-  src:  url('./../assets/fonts/ricardochcz.eot?r8ql2u#iefix') format('embedded-opentype'),
-    url('./../assets/fonts/ricardochcz.ttf?r8ql2u') format('truetype'),
-    url('./../assets/fonts/ricardochcz.woff?r8ql2u') format('woff'),
-    url('./../assets/fonts/ricardochcz.svg?r8ql2u#ricardochcz') format('svg');
+  src:  url('./../assets/fonts/ricardochcz.eot?4ukk65');
+  src:  url('./../assets/fonts/ricardochcz.eot?4ukk65#iefix') format('embedded-opentype'),
+    url('./../assets/fonts/ricardochcz.ttf?4ukk65') format('truetype'),
+    url('./../assets/fonts/ricardochcz.woff?4ukk65') format('woff'),
+    url('./../assets/fonts/ricardochcz.svg?4ukk65#ricardochcz') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -93,8 +93,17 @@
 .icon-globe:before {
   content: "\f0ac";
 }
+.icon-group:before {
+  content: "\f0c0";
+}
+.icon-users:before {
+  content: "\f0c0";
+}
 .icon-flask:before {
   content: "\f0c3";
+}
+.icon-envelope:before {
+  content: "\f0e0";
 }
 .icon-linkedin:before {
   content: "\f0e1";
@@ -203,6 +212,18 @@
 }
 .icon-git:before {
   content: "\f1d3";
+}
+.icon-paper-plane:before {
+  content: "\f1d8";
+}
+.icon-send:before {
+  content: "\f1d8";
+}
+.icon-paper-plane-o:before {
+  content: "\f1d9";
+}
+.icon-send-o:before {
+  content: "\f1d9";
 }
 .icon-newspaper-o:before {
   content: "\f1ea";
