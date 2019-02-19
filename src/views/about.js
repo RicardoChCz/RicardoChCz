@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import mePhoto from "../../assets/images/RCC.jpeg";
+import mePhoto from "../assets/images/RCC.jpeg";
 import Swiper from "react-id-swiper";
 import $ from 'jquery';
 
@@ -41,7 +41,7 @@ class Introduction extends Component{
           <div className="middle">
             <div className="row fadeIn animated">
               <div className="col-sm-5">
-                <img src={mePhoto} className="me-photo"/>
+                <img src={mePhoto} className="me-photo" alt="Myself"/>
               </div>
               <div className="col-sm-7">
                 <h2 className="shake animated">Hi!</h2>
@@ -65,16 +65,15 @@ class Timeline extends Component{
           <div className="middle" style={{paddingBottom:150}}>
             <h4>{this.props.title}</h4>
             <div className="time-line">
-            
-              {(this.props.cvList.length ==0) ? <div/> :
+              {(this.props.cvList.length ===0) ? <div/> :
                 this.props.cvList.map(({
                   initialDate,
                   finalDate,
                   jobTitle,
                   company,
-                  description
+                  description,
                 }) => (
-                <div className="row">
+                <div className="row" key={initialDate}>
                   <div className="col-sm-6">
                     <p className="exp-bullet">
                       <span className="date">{initialDate} - </span> 
@@ -113,15 +112,16 @@ class About extends Component {
       else {
         if(p<5){p++;}
       }
-
       if ($("#about").length){
-        if(p==0){
+        if(p===0){
           $("#about")[0].className = "disapear-content";
-          setTimeout(function(){ 
-            window.location = "/#/" }, 
-            1000);
-          }
+          setTimeout(function(){ window.location = "/#/" }, 1000);
         }
+        else if(p>3){
+          $("#about-swipper")[0].className = "disapear-content";
+          window.location = "/#/skills"
+        }
+      }
     });
   }
 
@@ -129,14 +129,13 @@ class About extends Component {
     const params = {
       direction: 'horizontal',
       slidesPerView: 1,
-      spaceBetween: 30,
       keyboard:true,
       mousewheel: true,
       lazy: true,
       pagination: {
         el: '.swiper-pagination.customized-swiper-pagination',
         type: 'bullets',
-        clickable: true
+        clickable: false
       },
       spaceBetween: 30
     }
@@ -144,7 +143,7 @@ class About extends Component {
     return (
       <div id="about">
         <div className="basic-opacity about-content"></div>
-        <div className="about-content">
+        <div id="about-swipper" className="about-content">
           <Swiper {...params}>
             <div><Introduction/></div>
             <div><Timeline title="Experience" cvList={jobs}/></div>

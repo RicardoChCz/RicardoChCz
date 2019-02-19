@@ -4,11 +4,11 @@ import {
   NavLink,
   HashRouter
 } from "react-router-dom";
-import Home from "./views/home/home";
-import About from "./views/about/about";
-import Contact from "./views/contact/contact";
-import Portafolio from "./views/portafolio/portafolio";
-import Skills from "./views/skills/skills";
+import Home from "./views/home";
+import About from "./views/about";
+import Contact from "./views/contact";
+import Portafolio from "./views/portafolio";
+import Skills from "./views/skills";
 import Social from "./views/components/social"
 
 
@@ -35,9 +35,6 @@ class Main extends Component {
               </li>
               <li>
                 <NavLink to="/portafolio">Portafolio</NavLink>
-              </li>
-              <li>
-                <a href="http://localhost:8888/blog">Blog</a>
               </li>
               <li>
                 <NavLink to="/contact">Contact</NavLink>

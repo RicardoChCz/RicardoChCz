@@ -1,12 +1,12 @@
 @import "variables.scss";
 @import "animate.css";
 @import "icon.css";
-@import "../views/home/home.scss";
-@import "../views/portafolio/portafolio.scss";
-@import "../views/contact/contact.scss";
-@import "../views/skills/skills.scss";
-@import "../views/about/about.scss";
-@import "../views/components/components.scss";
+@import "components.scss";
+@import "./screens/home.scss";
+@import "./screens/portafolio.scss";
+@import "./screens/contact.scss";
+@import "./screens/skills.scss";
+@import "./screens/about.scss";
 
 /* =======================================================================
 HTML5 CSS Reset Minified
@@ -75,7 +75,7 @@ h3{
 }
 h4{
   color: $secondary;
-  font-size: 1.4em;
+  font-size: 1.5em;
   margin-bottom: 20px;
 }
 p{
@@ -120,6 +120,10 @@ strong{
   a{
     color: $light;
     font-size: 1.2em;
+  }
+  span.tag{
+    color: $primary;
+    font-weight: $bold;
   }
 }
 

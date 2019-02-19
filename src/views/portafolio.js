@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Swiper from "react-id-swiper";
-import iPhone from "../../assets/images/iphone_mask.png"
-import iMac from "../../assets/images/macbook_mask.png"
+import iPhone from "../assets/images/iphone_mask.png"
+import iMac from "../assets/images/macbook_mask.png"
 import $ from 'jquery';
 
 
@@ -33,9 +33,9 @@ class ProyectDescription extends Component{
             <div className="description-container">
               <h2> {this.props.title} </h2>
               <p>{ this.props.description} </p>
-              <a onClick={this.props.openDetails}>
+              <span className="link" onClick={this.props.openDetails}>
                 More details
-              </a>
+              </span>
             </div>
           </div>
         </div>
@@ -48,12 +48,13 @@ class ProyectDetails extends Component{
   render(){
     return(
       <div className="sidebar">
-        <div className="fadelayer"/>
+        <div className="fadelayer" 
+          onClick={ this.props.closeDetails}/>
         <div className="proyect-details">
-          <a className="close-bar-button"
+          <span className="close-bar-button"
              onClick={ this.props.closeDetails}>
             <span className="icon-angle-right"></span>
-          </a>
+          </span>
           <div className="outter">
             <div className="middle">
               <div className="description-container">
@@ -73,11 +74,11 @@ class ProyectDetails extends Component{
 class MobileProyect extends Component{
   render(){
     return(
-      <div>
+      <div className="mobile-proyect-wrapper">
         <div className="iphone-wrapper">
           <div className="iphonescreen-mask"
             style={{backgroundImage: `url(${this.props.image}`}}/>
-          <img className="img-responsive mask" src={iPhone}/>
+          <img className="img-responsive mask" src={iPhone} alt="iphone-mask"/>
         </div>
         <ProyectDescription
           title={this.props.title}
@@ -95,11 +96,11 @@ class MobileProyect extends Component{
 class DesktopProyect extends Component{
   render(){
     return(
-      <div>
+      <div className="desktop-proyect-wrapper">
         <div className="mac-wrapper">
           <div className="background-mask"
             style={{backgroundImage: `url(${this.props.image}`}}/>
-          <img className="img-responsive mask" src={iMac}/>
+          <img className="img-responsive mask" src={iMac} alt="mac mask" />
         </div>
         <ProyectDescription
           title={this.props.title}
@@ -124,6 +125,28 @@ class Portafolio extends Component {
     this.closeDetails = this.closeDetails.bind(this);
   }
 
+  componentDidMount(){
+    var p = 0
+    $(window).bind('mousewheel', function(event) {
+      if (event.originalEvent.wheelDelta >= 0) {
+        if(p>0){p--;}
+      }
+      else {
+        if(p<5){p++;}
+      }
+      if ($("#portafolio-content").length){
+        if(p===0){
+          $("#portafolio-content")[0].className = "disapear-content";
+          window.location = "/#/skills"
+        }
+        else if(p>4){
+          $("#portafolio-content")[0].className = "disapear-content";
+          window.location = "/#/contact"
+        }
+      }
+    });
+  }
+
   openDetails = () => {
     $('body','html')[0].className= "with-sidebar"
     this.setState({isOpen : true})
@@ -146,25 +169,24 @@ class Portafolio extends Component {
       pagination: {
         el: '.swiper-pagination.customized-swiper-pagination',
         type: 'bullets',
-        clickable: true
+        clickable: false
       },
-      navigation: {
-        nextEl: '.swiper-button-next.swiper-button-white',
-        prevEl: '.swiper-button-prev.swiper-button-white'
-      },
-      spaceBetween: 30
     }
 
     return (
       <div>
         <div className="basic-opacity"></div>
-        <div style={{position:'absolute', top:0, left:0, width:"100%", height:"100%"}}>
-          <div className="solid-left-back"/>
+        <div id="portafolio-content">
+          <div className="solid-left-back fadeIn animated"/>
             <Swiper {...params}>
-              {(portafolio.length ==0) ? <div/> :
+              <div className="cover-slide"> 
+                <ProyectDescription title={"Portafolio"}/>
+              </div>
+
+              {(portafolio.length === 0) ? <div/> :
                 portafolio.map(({type, title, subtitle,image, description, details, link}) => (
-                  <div>
-                    {(type == "mobile") ?
+                  <div key={title}>
+                    {(type === "mobile") ?
                       <MobileProyect
                         title = {title}
                         image = {image}
@@ -187,6 +209,9 @@ class Portafolio extends Component {
                     }
                   </div>
                 ))}
+              <div className="cover-slide"> 
+                <ProyectDescription title={"Continuar"}/>
+              </div>
             </Swiper>
         </div>
       </div>

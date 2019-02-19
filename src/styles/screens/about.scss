@@ -1,10 +1,18 @@
-@import "../../styles/variables.scss";
+@import "../variables.scss";
 
 .about-slide{
   max-width: 550px;
   width: 100%;
   height: 100%;
   position: relative;
+  opacity: 0;
+  -webkit-transition: opacity 1s; /* Safari */
+  transition: opacity 1s;
+}
+.swiper-slide-active{
+  .about-slide{
+    opacity: 1;
+  }
 }
 
 .me-photo{

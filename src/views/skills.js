@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import $ from 'jquery';
 
 class PercentageBar extends Component{
   render(){
@@ -36,11 +37,33 @@ class Badge extends Component{
   }
 }
 class Skills extends Component {
+  componentDidMount(){
+    var p = 0
+    $(window).bind('mousewheel', function(event) {
+      if (event.originalEvent.wheelDelta >= 0) {
+        if(p>0){p--;}
+      }
+      else {
+        if(p<5){p++;}
+      }
+      if ($("#skills-content").length){
+        if(p===0){
+          $("#skills-content")[0].className = "disapear-content";
+          window.location = "/#/about"
+        }
+        else if(p>0){
+          $("#skills-content")[0].className = "disapear-content";
+          window.location = "/#/portafolio"
+        }
+      }
+    });
+  }
+
   render() {
     return (
       <div>
         <div className="basic-opacity"></div>
-        <div className="outter">
+        <div id="skills-content" className="outter fadeIn animated">
           <div className="middle">
             <div className="inner">
               <h4 style={{textAlign: 'center'}}> Skills </h4>

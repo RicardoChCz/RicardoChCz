@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import scroll from "../../assets/images/scroll.gif";
+import scroll from "../assets/images/scroll.gif";
 import $ from 'jquery';
 
 class Home extends Component {
@@ -47,7 +47,7 @@ class Home extends Component {
           </div>
         </div>
         </div>
-        <img src={scroll} className="scroll"/>
+        <img src={scroll} className="scroll" alt="Scroll down"/>
       </div>
     );
   }

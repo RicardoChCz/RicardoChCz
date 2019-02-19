@@ -5,19 +5,12 @@ class Contact extends Component {
     return (
       <div>
       <div className="basic-opacity"></div>
-      <div className="outter">
+      <div className="outter fadeIn animated">
         <div className="middle">
           <div className="inner" style={{maxWidth:700}}>
             <div className="row contact-me">
               <h4>Contact me</h4>
               <div className="row">
-                <div className="col-sm-4">
-                  <div className="card">
-                    <h5> Phone </h5>
-                    <p> +52 44 33 06 23 90</p>
-                    <span className="icon-phone"></span>
-                  </div>
-                </div>
                 <div className="col-sm-4">
                   <div className="card">
                     <h5>Email </h5>
@@ -27,10 +20,19 @@ class Contact extends Component {
                 </div>
                 <div className="col-sm-4">
                   <div className="card">
-                    <h5> Location </h5>
-                    <p> Morelia, Mich</p>
-                    <span className="icon-map-marker"></span>
+                    <h5> Phone </h5>
+                    <p> +52 44 33 06 23 90</p>
+                    <span className="icon-phone"></span>
                   </div>
+                </div>
+                <div className="col-sm-4">
+                  <a href="http://localhost:8888/blog">
+                    <div className="card">
+                      <h5> Blog </h5>
+                      <p> Morelia, Mich</p>
+                      <span className="icon-comment"></span>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>

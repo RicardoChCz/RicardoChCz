@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import "../variables.scss";
 
 .form-control{
   background-color: transparent;
@@ -46,6 +46,9 @@
     border:1px solid rgba($light,0.4);
     -webkit-transition: background-color 0.5s; /* Safari */
     transition: background-color 0.5s;
+    p{
+      color: $light;
+    }
   }
   .card:hover{
     background-color: $primary-dark;
