@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import $ from 'jquery';
 
 class PercentageBar extends Component{
   render(){
@@ -37,27 +36,6 @@ class Badge extends Component{
   }
 }
 class Skills extends Component {
-  componentDidMount(){
-    var p = 0
-    $(window).bind('mousewheel', function(event) {
-      if (event.originalEvent.wheelDelta >= 0) {
-        if(p>0){p--;}
-      }
-      else {
-        if(p<5){p++;}
-      }
-      if ($("#skills-content").length){
-        if(p===0){
-          $("#skills-content")[0].className = "disapear-content";
-          window.location = "/#/about"
-        }
-        else if(p>0){
-          $("#skills-content")[0].className = "disapear-content";
-          window.location = "/#/portafolio"
-        }
-      }
-    });
-  }
 
   render() {
     return (
@@ -68,24 +46,46 @@ class Skills extends Component {
             <div className="inner">
               <h4 style={{textAlign: 'center'}}> Skills </h4>
               <div className="row" style={{marginBottom:10}}>
-                <div className="col-sm-6">
-                  <PercentageBar percentage={90} title={"HTML"}/> 
-                  <PercentageBar percentage={80} title={"CSS"}/>   
-                  <PercentageBar percentage={60} title={"jQuery"}/>   
-                  <PercentageBar percentage={95} title={"Bootstraps"}/>   
+                <div className="col-sm-12">
+                  <p>
+                    Advanced
+                  </p>
+                  <ul className="skills-bullets">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>Sass</li>
+                    <li>Less</li>
+                    <li>LaTeX</li>
+                    <li>Bootstrap</li>
+                    <li>Wordpress</li>
+                  </ul>
+                  <p>
+                    Intermediate
+                  </p>
+                  <ul className="skills-bullets">
+                    <li>Python</li>
+                    <li>React</li>
+                    <li>Vue</li>
+                    <li>Git</li>
+                    <li>Node</li>
+                    <li>AJAX</li>
+                  </ul>
+                  <p>
+                    Beginner
+                  </p>
+                  <ul className="skills-bullets" style={{marginBottom:25}}>
+                    <li>Express</li>
+                    <li>Complexity Analysis</li>
+                    <li>Machine Learning</li>
+                  </ul>
+
+                  <a className="button" href="/#/portafolio/">
+                    Check out my work!
+                  </a>
+
                 </div>
-                <div className="col-sm-6">
-                  <PercentageBar percentage={70} title={"React"}/>
-                  <PercentageBar percentage={60} title={"React Native"}/>   
-                  <PercentageBar percentage={50} title={"Node"}/>   
-                  <PercentageBar percentage={65} title={"Python"}/>       
-                </div>  
-              </div>
-              <div className="skills-container">
-                <Badge icon={"icon-gears"} label={"Problem solver"}/>
-                <Badge icon={"icon-gears"} label={"Problem solver"}/>
-                <Badge icon={"icon-gears"} label={"Problem solver"}/>
-                <Badge icon={"icon-gears"} label={"Problem solver"}/>
+
               </div>
             </div>
           </div>
