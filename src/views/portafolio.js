@@ -24,6 +24,23 @@ var portafolio=[
   },
 ]
 
+class Cover extends Component{
+  render(){
+    return(
+      <div className="proyect-description">
+        <div className="outter">
+          <div className="middle">
+            <div className="description-container">
+              <h2> {this.props.title} </h2>
+              <a href="/#/contact">Contact me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
 class ProyectDescription extends Component{
   render(){
     return(
@@ -125,28 +142,6 @@ class Portafolio extends Component {
     this.closeDetails = this.closeDetails.bind(this);
   }
 
-  componentDidMount(){
-    var p = 0
-    $(window).bind('mousewheel', function(event) {
-      if (event.originalEvent.wheelDelta >= 0) {
-        if(p>0){p--;}
-      }
-      else {
-        if(p<5){p++;}
-      }
-      if ($("#portafolio-content").length){
-        if(p===0){
-          $("#portafolio-content")[0].className = "disapear-content";
-          window.location = "/#/skills"
-        }
-        else if(p>4){
-          $("#portafolio-content")[0].className = "disapear-content";
-          window.location = "/#/contact"
-        }
-      }
-    });
-  }
-
   openDetails = () => {
     $('body','html')[0].className= "with-sidebar"
     this.setState({isOpen : true})
@@ -169,7 +164,7 @@ class Portafolio extends Component {
       pagination: {
         el: '.swiper-pagination.customized-swiper-pagination',
         type: 'bullets',
-        clickable: false
+        clickable: true
       },
     }
 
@@ -180,7 +175,7 @@ class Portafolio extends Component {
           <div className="solid-left-back fadeIn animated"/>
             <Swiper {...params}>
               <div className="cover-slide"> 
-                <ProyectDescription title={"Portafolio"}/>
+                <Cover title={"Portafolio"}/>
               </div>
 
               {(portafolio.length === 0) ? <div/> :
@@ -209,8 +204,8 @@ class Portafolio extends Component {
                     }
                   </div>
                 ))}
-              <div className="cover-slide"> 
-                <ProyectDescription title={"Continuar"}/>
+              <div> 
+                <Cover title={"Liked something?"}/>
               </div>
             </Swiper>
         </div>
