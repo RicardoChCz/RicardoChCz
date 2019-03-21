@@ -23,7 +23,7 @@ var schools=[
    "finalDate":"June 2018",
    "jobTitle":"M.S in Mathematics",
    "company":"UNAM - UMSNH",
-   "description":"Specialized in  Algebraic Topology, Graph Theory and Algebra.One semester at CIMAT Probability and Statistics program. "
+   "description":"Specialized in  Algebraic Topology, Graph Theory and Algebra. One semester at CIMAT Probability and Statistics program. "
   },
   {"initialDate":"Aug 2011",
    "finalDate":"June 2016",

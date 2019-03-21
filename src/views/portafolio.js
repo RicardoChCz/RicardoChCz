@@ -7,21 +7,53 @@ import $ from 'jquery';
 
 var portafolio=[
   {"title":"Monas Fun & Food App",
-   "description":"Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt labore et dolore magna aliqua.",
+   "description":"Simple mobile app to do reservations vía email. Provides contact information.",
    "type":"mobile",
-   "image":"/images/ricardochcz-movil.png",
-   "subtitle":"Apliación hibrida",
-   "details":"Details",
+   "image":"/images/monas.png",
+   "subtitle":"Hybrid App",
+   "details":"Generated in React Native for iOS and Android. Simple mobile aplication that allows the user to contact the different branches in CDMX",
    "link":"http://monasff.com/"
   },
   {"title":"Piñon 360",
-   "description":"Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt labore et dolore magna aliqua.",
+   "description":"Mockup of web app Pinon 360",
    "type":"desktop",
    "image":"/images/pinon.png",
-   "subtitle":"Apliación web",
-   "details":"Details",
-   "link":"http://monasff.com/"
+   "subtitle":"Responsive Web App",
+   "details":"Pure HTML, CSS, JS, mockup for web app dedicated to manage Health Care Information for Hospitals in USA.",
+   "link":"http://ricardochcz.com/test/Pinon360"
   },
+  {"title":"About Me",
+   "description":"This awesome About me web page",
+   "type":"desktop",
+   "image":"/images/ricardochcz.png",
+   "subtitle":"Responsive Web Page",
+   "details":"React SPA for personal info.",
+   "link":"http://ricardochcz.com/"
+  },
+  {"title":"Weenjoy Partner Platform",
+   "description":"Front-end development for Weenjoy Partners Web App.",
+   "type":"desktop",
+   "image":"/images/partners.png",
+   "subtitle":"Responsive Web App",
+   "details":"Collaboration. Mock up in HTML, CSS, JS, node.js for Weenjoy Partners Web platform. API implementation. (Currently in maintenance)",
+   "link":"http://partners.weenjoy.com/"
+  },
+  {"title":"WIN platform",
+   "description":"Front-end development for WIN Web App.",
+   "type":"desktop",
+   "image":"/images/win.png",
+   "subtitle":"Responsive Web App",
+   "details":"Collaboration. Mock up in React.js and node.js for WIN Web platform. API implementation. (Currently in maintenance)",
+   "link":"http://win.weenjoy.com/"
+  },
+  {"title":"Weenjoy Site",
+    "description":"Responsive Static SPA for Weenjoy App promotion",
+    "type":"desktop",
+    "image":"/images/weenjoy.png",
+    "subtitle":"Responsive Web Page",
+    "details":"Collaboration. Mock up in Vue.js for SPA with SSR (nuxt) to be SEO friendly. (Currently on develop)",
+    "link":"http://weenjoy.com/"
+   },
 ]
 
 class Cover extends Component{
@@ -30,9 +62,9 @@ class Cover extends Component{
       <div className="proyect-description">
         <div className="outter">
           <div className="middle">
-            <div className="description-container">
+            <div className="description-container" style={{textAlign: 'center'}}>
               <h2> {this.props.title} </h2>
-              <a href="/#/contact">Contact me</a>
+              <a class="button" href="/#/contact">Contact me</a>
             </div>
           </div>
         </div>

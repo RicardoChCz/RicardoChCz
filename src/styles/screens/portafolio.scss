@@ -45,7 +45,7 @@
   height: 84%;
   position: absolute;
   right: calc(10.6% + 20px);
-  top: 5%;
+  top: 6%;
   z-index: -1;
   background-position: center;
   background-repeat: no-repeat;
@@ -98,11 +98,11 @@
 }
 
 .description-container{
-  padding: 0px 20px;
+  padding: 50px 20px;
   max-width: 400px;
   margin: auto;
   width: 100%;
-  text-align: center;
+  text-align: left;
   li{
     list-style-type: disc;
     color: white;
@@ -144,7 +144,12 @@
 }
 
 .proyect-details{
-  @include construct-bar($primary-dark, $light, $primary)
+  @include construct-bar($primary-dark, $light, $primary);
+  h2{
+    font-size: 1.8em;
+    color: $secondary;
+  }
+  padding-top: 50px;
 }
 
 .sidebar{
@@ -264,11 +269,17 @@
     p{
       font-size: 0.8em;
     }
+    .link{
+      font-size: 0.8em;
+    }
   }
   .iphone-wrapper{
     transform: translate(-50%, -50%);
     top: 80vh;
     max-width: 65vw;
+    .iphonescreen-mask{
+      border-radius: 15px;
+    }
   }
 
   .mac-wrapper{
