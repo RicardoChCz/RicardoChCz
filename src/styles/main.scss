@@ -166,9 +166,29 @@ strong{
   margin: auto;
   padding: 15px;
 }
+
+.button{
+  text-decoration: none;
+  background-color: $secondary;
+  color: #ffefd5;
+  padding: 5px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 0;
+  font-size: 0.9em;
+  font-weight: 400;
+  -webkit-box-shadow: 0px 10px 30px 1px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0px 10px 30px 1px rgba(0,0,0,0.6);
+  box-shadow: 0px 10px 30px 1px rgba(0,0,0,0.6);
+}
+.button:hover{
+  text-decoration: none;
+  background-color: $secondary-high;
+  color:$dark;
+}
    
 .swiper-pagination-bullet-active{
-  background: white;
+  background: $light;
 }
 
 .swiper-container {
@@ -195,6 +215,12 @@ strong{
   align-items: center;
 }
 
+.swiper-button-next, .swiper-button-prev {
+  width: 16px;
+  height: 24px;
+  background-size: 16px 24px;
+}
+
 .header{
   [class^="icon-"], [class*=" icon-"] {
     display: none;
@@ -212,7 +238,7 @@ strong{
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 650px) {
   .header{
     background-color: $dark;
     border-bottom:2px solid $primary;

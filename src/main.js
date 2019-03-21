@@ -41,7 +41,6 @@ class Main extends Component {
               </li>
             </ul>
           </div>
-
           <div className="content">
             <Route exact path="/" component={Home}/>
             <Route path="/about" component={About}/>
