@@ -54,11 +54,11 @@ class Skills extends Component {
                     <li>HTML</li>
                     <li>CSS</li>
                     <li>Javascript</li>
+                    <li>JQuery</li>                    
                     <li>Sass</li>
                     <li>Less</li>
                     <li>LaTeX</li>
                     <li>Bootstrap</li>
-                    <li>Wordpress</li>
                   </ul>
                   <p>
                     Intermediate
@@ -66,18 +66,25 @@ class Skills extends Component {
                   <ul className="skills-bullets">
                     <li>Python</li>
                     <li>React</li>
+                    <li>React Native</li>
                     <li>Vue</li>
                     <li>Git</li>
-                    <li>Node</li>
-                    <li>AJAX</li>
+                    <li>NodeJS</li>
+                    <li>Data Visualization</li>
+                    <li>Ajax</li>
+                    <li>Wordpress</li>
+                    <li>Express.js</li>
                   </ul>
                   <p>
                     Beginner
                   </p>
                   <ul className="skills-bullets" style={{marginBottom:25}}>
-                    <li>Express</li>
-                    <li>Complexity Analysis</li>
-                    <li>Machine Learning</li>
+                    <li>Photoshop</li>
+                    <li>Illustrator</li>
+                    <li>SEO</li>
+                    <li>Relational Algebra </li>
+                    <li>Php </li>
+                    <li>Java</li>
                   </ul>
 
                   <a className="button" href="/#/portafolio/">
