@@ -12,21 +12,28 @@ class Contact extends Component {
               <h4>Contact me</h4>
               <div className="row">
                 <div className="col-sm-4">
-                  <div className="card">
-                    <h5>Email </h5>
-                    <p> ricardo.ch.cz@gmail.com</p>
-                    <span className="icon-envelope"></span>
-                  </div>
+                  <a href="mailto:ricardo.ch.cz@gmail.com?Subject=Hello"
+                  title="Send email to me@ricardochcz.com"
+                  target="_top">
+                    <div className="card">
+                      <h5>Email </h5>
+                      <p> ricardo.ch.cz@gmail.com</p>
+                      <span className="icon-envelope"></span>
+                    </div>
+                  </a>
                 </div>
                 <div className="col-sm-4">
-                  <div className="card">
-                    <h5> Phone </h5>
-                    <p> +52 44 33 06 23 90</p>
-                    <span className="icon-phone"></span>
-                  </div>
+                  <a href="tel:018007465697"
+                    title="LLámanos sin costo al 01 800 746 5697">
+                    <div className="card">
+                      <h5> Phone </h5>
+                      <p> +52 44 33 06 23 90</p>
+                      <span className="icon-phone"></span>
+                    </div>
+                  </a>
                 </div>
                 <div className="col-sm-4">
-                  <a href="http://localhost:8888/blog">
+                  <a href="#">
                     <div className="card">
                       <h5> Blog </h5>
                       <p> Miscelánea y Matemáticas</p>
