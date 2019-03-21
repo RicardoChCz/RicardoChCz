@@ -63,4 +63,17 @@
       color: $primary
     }
   }
+
+  @media screen and (max-width: 768.99px) {
+    .middle{
+      padding-top: 50px;
+    }
+    .card{
+      padding: 10px;
+      margin-bottom: 10px;
+      p{
+        margin-bottom: 0.5em;
+      }
+    }
+  }
 }

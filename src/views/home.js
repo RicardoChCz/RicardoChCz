@@ -38,7 +38,7 @@ class Home extends Component {
             <div id="home-text" className="col-sm-6">
                 <h1 className="fadeIn animated slow">RicardoChCz</h1>
                 <p className="description fadeIn animated slow"> 
-                  <i>Hi, I'm Ricardo a Front-end developer</i>
+                  Hi, I'm Ricardo a Front-end developer
                 </p>
             </div>
             {/*Right side*/}

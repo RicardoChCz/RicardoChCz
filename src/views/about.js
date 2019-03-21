@@ -6,15 +6,15 @@ import $ from 'jquery';
 var jobs=[
   {"initialDate":"March 2018",
    "finalDate":"Current",
-   "jobTitle":"Frontend developer",
+   "jobTitle":"Front-end developer",
    "company":"Weenjoy",
-   "description":"Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt labore et dolore magna aliqua."
+   "description":"Bridge between UI/UX design team to meet technical requirements for Web Scalable Applications. API implementation."
   },
   {"initialDate":"Aug 2016",
-   "finalDate":"March 2018",
-   "jobTitle":"Frontend developer",
-   "company":"Weenjoy",
-   "description":"Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt labore et dolore magna aliqua."
+   "finalDate":"Dec 2016",
+   "jobTitle":"Front-end developer",
+   "company":"Pinon 360",
+   "description":"Translation of UI/UX design wireframes to code (HTML/CSS/JavaScript)"
   }
 ]
 
@@ -23,13 +23,13 @@ var schools=[
    "finalDate":"June 2018",
    "jobTitle":"M.S in Mathematics",
    "company":"UNAM - UMSNH",
-   "description":"Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt labore et dolore magna aliqua."
+   "description":"Specialized in  Algebraic Topology, Graph Theory and Algebra.One semester at CIMAT Probability and Statistics program. "
   },
   {"initialDate":"Aug 2011",
    "finalDate":"June 2016",
    "jobTitle":"B.S in Physics and Mathematics",
    "company":"UMSNH",
-   "description":"Ut enim ad minim veniam, quis nostrud exerc. Irure dolor in reprehend incididunt labore et dolore magna aliqua."
+   "description":"Focused in pure Mathematics. Thesis in Algebraic Topology: 'Whitehead Torsión' (ES). Graduated with honors."
   }
 ]
 
@@ -46,7 +46,7 @@ class Introduction extends Component{
               <div className="col-sm-7">
                 <h2 className="shake animated">Hi!</h2>
                 <p className="who-am-i">
-                  I'm Ricardo Chávez, a <strong> Mathematician </strong> with <strong>Frontend</strong> skills, 
+                  I'm Ricardo Chávez, a <strong> Mathematician </strong> with <strong>Front-end</strong> skills, 
                   intrested in Data science.
                 </p>
               </div>
@@ -62,9 +62,9 @@ class Timeline extends Component{
     return(
       <div className="about-slide">
         <div className="outter">
-          <div className="middle" style={{paddingBottom:150}}>
+          <div className="middle middle-t">
             <h4>{this.props.title}</h4>
-            <div className="time-line">
+            <div className="timeline">
               {(this.props.cvList.length ===0) ? <div/> :
                 this.props.cvList.map(({
                   initialDate,
@@ -95,6 +95,14 @@ class Timeline extends Component{
                 </div>
                 ))}
             </div>
+            {(this.props.action === 'download')?
+              <a className="button" href="/resources/Frontend_CV_RCC_EN.pdf" download>
+                Download Resumé
+              </a>:
+              <a className="button" href="/#/skills/">
+                Continue
+              </a>
+            }
           </div>
         </div>
       </div>
@@ -117,10 +125,6 @@ class About extends Component {
           $("#about")[0].className = "disapear-content";
           setTimeout(function(){ window.location = "/#/" }, 1000);
         }
-        else if(p>3){
-          $("#about-swipper")[0].className = "disapear-content";
-          window.location = "/#/skills"
-        }
       }
     });
   }
@@ -135,7 +139,11 @@ class About extends Component {
       pagination: {
         el: '.swiper-pagination.customized-swiper-pagination',
         type: 'bullets',
-        clickable: false
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next.swiper-button-white',
+        prevEl: '.swiper-button-prev.swiper-button-white',
       },
       spaceBetween: 30
     }
@@ -145,9 +153,22 @@ class About extends Component {
         <div className="basic-opacity about-content"></div>
         <div id="about-swipper" className="about-content">
           <Swiper {...params}>
-            <div><Introduction/></div>
-            <div><Timeline title="Experience" cvList={jobs}/></div>
-            <div><Timeline title="Education" cvList={schools}/></div>
+            <div>
+              <Introduction/>
+            </div>
+            <div>
+              <Timeline 
+                title="Experience" 
+                cvList={jobs} 
+                action={"download"}
+                />
+            </div>
+            <div>
+              <Timeline 
+                title="Education" 
+                cvList={schools} 
+                action={"next"}/>
+            </div>
           </Swiper>
         </div>
       </div>

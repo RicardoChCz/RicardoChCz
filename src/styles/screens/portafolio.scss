@@ -8,7 +8,11 @@
   width:100%;
   height:100%;
 }
-
+.cover-slide{
+  a{
+    display: none;
+  }
+}
 @mixin gadget-wrapper($max) {
   position: absolute;
   top: 50%;
@@ -106,12 +110,11 @@
     font-size: 0.9em;
   }
   p{
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
   span.link{
     cursor: pointer;
     color: $primary;
-    font-weight: $bold;
     cursor: pointer;
   }
 }
@@ -141,7 +144,6 @@
 }
 
 .proyect-details{
-  display: none;
   @include construct-bar($primary-dark, $light, $primary)
 }
 
@@ -165,7 +167,6 @@
     width: 100%;
   }
   .proyect-details{
-    display: block;
     right: 0px;
   }
 }
@@ -233,7 +234,6 @@
 @media screen and (max-width: 850px) {
   .mac-wrapper{
     transform: translate(-50%, -50%);
-    bottom: 100;
     top: 60%;
     max-width: 600px;
   }
@@ -249,18 +249,43 @@
   }
 }
 @media screen and (max-width: 650px) {
+  .proyect-details{
+    max-width: none;
+    width: 100%;
+    right:-100%;
+    border: 0px;
+  }
   .description-container{
     max-width: 600px;
+    padding: 0px;
+    h2{
+      font-size: 1.5em;
+    }
+    p{
+      font-size: 0.8em;
+    }
   }
   .iphone-wrapper{
     transform: translate(-50%, -50%);
-    bottom: 100;
-    top: 80%;
+    top: 80vh;
+    max-width: 65vw;
   }
+
+  .mac-wrapper{
+    top: 65vh;
+  }
+
   .proyect-description{
     width: 100%;
   }
   .mobile-proyect-wrapper{
+    .middle{
+      display: table-cell;
+      vertical-align: top;
+      padding: 120px 15px 0px!important;
+    }
+  }
+  .desktop-proyect-wrapper{
     .middle{
       display: table-cell;
       vertical-align: top;

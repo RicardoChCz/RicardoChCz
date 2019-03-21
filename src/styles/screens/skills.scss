@@ -154,3 +154,23 @@
     }
   }
 }
+
+#skills-content{
+  p{
+    font-weight: $bold;
+    color: $primary;
+    margin: 15px 0px 5px;
+    font-size:1.1em;
+  }
+  ul.skills-bullets{
+    li{
+      display: inline-block;
+      padding: 1px 12px;
+      margin: 0px 7px 7px 0px;
+      border-radius: 5px;
+      border: 1px solid $secondary;
+      font-weight: $thin;
+      font-size: 0.9em;
+    }
+  }
+}

@@ -29,7 +29,7 @@ class Contact extends Component {
                   <a href="http://localhost:8888/blog">
                     <div className="card">
                       <h5> Blog </h5>
-                      <p> Morelia, Mich</p>
+                      <p> Miscelánea y Matemáticas</p>
                       <span className="icon-comment"></span>
                     </div>
                   </a>
