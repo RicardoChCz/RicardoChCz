@@ -3,7 +3,8 @@ import Swiper from "react-id-swiper";
 import iPhone from "../assets/images/iphone_mask.png"
 import iMac from "../assets/images/macbook_mask.png"
 import $ from 'jquery';
-
+import swipe from "../assets/images/swipe.gif";
+import scroll from "../assets/images/scroll.gif";
 
 var portafolio=[
   {"title":"Monas Fun & Food App",
@@ -56,7 +57,7 @@ var portafolio=[
    },
 ]
 
-class Cover extends Component{
+class CoverFront extends Component{
   render(){
     return(
       <div className="proyect-description">
@@ -64,7 +65,25 @@ class Cover extends Component{
           <div className="middle">
             <div className="description-container" style={{textAlign: 'center'}}>
               <h2> {this.props.title} </h2>
-              <a class="button" href="/#/contact">Contact me</a>
+              <img src={scroll} className="scroll-portafolio" alt="Scroll down"/>
+              <img src={swipe} className="swipe-portafolio" alt="Swipe right"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+class CoverLast extends Component{
+  render(){
+    return(
+      <div className="proyect-description">
+        <div className="outter">
+          <div className="middle">
+            <div className="description-container" style={{textAlign: 'center'}}>
+              <h2> {this.props.title} </h2>
+              <a className="button" href="/#/contact">Contact me</a>
             </div>
           </div>
         </div>
@@ -207,7 +226,7 @@ class Portafolio extends Component {
           <div className="solid-left-back fadeIn animated"/>
             <Swiper {...params}>
               <div className="cover-slide"> 
-                <Cover title={"Portafolio"}/>
+                <CoverFront title={"Portafolio"}/>
               </div>
 
               {(portafolio.length === 0) ? <div/> :
@@ -237,7 +256,7 @@ class Portafolio extends Component {
                   </div>
                 ))}
               <div> 
-                <Cover title={"Liked something?"}/>
+                <CoverLast title={"Liked something?"}/>
               </div>
             </Swiper>
         </div>

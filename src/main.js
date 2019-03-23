@@ -57,39 +57,3 @@ class Main extends Component {
 }
  
 export default Main;
-
-
-/*
-              <li>
-                <NavLink to="/about">
-                  <span className="icon-user"></span> 
-                  <span className="tag"> About me</span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/skills">
-                  <span className="icon-gears"></span> 
-                  <span className="tag"> Skills </span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/portafolio">
-                  <span className="icon-suitcase"></span> 
-                  <span className="tag"> Portafolio</span>
-                </NavLink>
-              </li>
-              <li>
-                <a href="http://localhost:8888/blog">
-                  <span className="icon-newspaper-o"></span> 
-                  <span className="tag"> Blog </span>
-                </a>
-              </li>
-              <li>
-                <NavLink to="/contact">
-                  <span className="icon-phone"></span> 
-                  <span className="tag"> Contact </span>
-                </NavLink>
-              </li>
-
-
-*/

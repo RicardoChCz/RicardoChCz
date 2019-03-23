@@ -13,7 +13,7 @@ class Contact extends Component {
               <div className="row">
                 <div className="col-sm-4">
                   <a href="mailto:ricardo.ch.cz@gmail.com?Subject=Hello"
-                  title="Send email to me@ricardochcz.com"
+                  title="Send email to ricardo.ch.cz@gmail.com"
                   target="_top">
                     <div className="card">
                       <h5>Email </h5>
@@ -23,8 +23,8 @@ class Contact extends Component {
                   </a>
                 </div>
                 <div className="col-sm-4">
-                  <a href="tel:018007465697"
-                    title="LLámanos sin costo al 01 800 746 5697">
+                  <a href="tel:+524433062390"
+                    title="Give me a call">
                     <div className="card">
                       <h5> Phone </h5>
                       <p> +52 44 33 06 23 90</p>
@@ -33,7 +33,7 @@ class Contact extends Component {
                   </a>
                 </div>
                 <div className="col-sm-4">
-                  <a href="#">
+                  <a href="http://blog.ricardochcz.com/">
                     <div className="card">
                       <h5> Blog </h5>
                       <p> Miscelánea y Matemáticas</p>

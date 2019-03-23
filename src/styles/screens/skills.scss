@@ -165,12 +165,23 @@
   ul.skills-bullets{
     li{
       display: inline-block;
-      padding: 1px 12px;
+      padding: 4px 12px 2px;
       margin: 0px 7px 7px 0px;
       border-radius: 5px;
       border: 1px solid $secondary;
       font-weight: $thin;
       font-size: 0.9em;
+    }
+  }
+  z-index: 1!important;
+}
+@media screen and (max-width: 450px) {
+  #skills-content{
+    .inner{
+      padding-top: 35px;
+    }
+    h4{
+      margin-bottom: 0px;
     }
   }
 }

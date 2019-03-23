@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+/*
 class PercentageBar extends Component{
   render(){
     return(
@@ -35,8 +35,9 @@ class Badge extends Component{
     );
   }
 }
-class Skills extends Component {
 
+*/
+class Skills extends Component {
   render() {
     return (
       <div>
@@ -53,7 +54,7 @@ class Skills extends Component {
                   <ul className="skills-bullets">
                     <li>HTML</li>
                     <li>CSS</li>
-                    <li>Javascript</li>
+                    <li>JS</li>
                     <li>JQuery</li>                    
                     <li>Sass</li>
                     <li>Less</li>
@@ -69,7 +70,7 @@ class Skills extends Component {
                     <li>React Native</li>
                     <li>Vue</li>
                     <li>Git</li>
-                    <li>NodeJS</li>
+                    <li>Node.js</li>
                     <li>Data Visualization</li>
                     <li>Ajax</li>
                     <li>Wordpress</li>
@@ -81,19 +82,15 @@ class Skills extends Component {
                   <ul className="skills-bullets" style={{marginBottom:25}}>
                     <li>Photoshop</li>
                     <li>Illustrator</li>
-                    <li>SEO</li>
-                    <li>Relational Algebra </li>
                     <li>Php </li>
+                    <li>SEO</li>
                     <li>Java</li>
                   </ul>
-
-                  <a className="button" href="/#/portafolio/">
-                    Check out my work!
-                  </a>
-
                 </div>
-
               </div>
+              <a className="button" href="/#/portafolio/">
+                Check out my work!
+              </a>
             </div>
           </div>
         </div>

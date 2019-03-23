@@ -79,7 +79,21 @@
   opacity: 0;
   -webkit-transition: opacity 2s; /* Safari */
   transition: opacity 2s;
-  @include construct-left-portafolio-section(1)
+  @include construct-left-portafolio-section(1);
+  .scroll-portafolio{
+    max-width: 120px;
+    position: relative;
+    left: -8px;
+    opacity: 0.8;
+  }
+  .swipe-portafolio{
+    display: none;
+    max-width: 80px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(calc(-50% - 4px));
+    opacity: 0.8;
+  }
 }
 
 .swiper-slide-active{
@@ -283,7 +297,7 @@
     top: 80vh;
     max-width: 65vw;
     .iphonescreen-mask{
-      border-radius: 15px;
+      border-radius: 10%;
     }
   }
 
@@ -293,6 +307,12 @@
 
   .proyect-description{
     width: 100%;
+    .scroll-portafolio{
+      display: none;
+    }
+    .swipe-portafolio{
+      display: block;
+    }
   }
   .mobile-proyect-wrapper{
     .middle{
