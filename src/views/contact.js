@@ -5,7 +5,7 @@ class Contact extends Component {
     return (
       <div>
       <div className="basic-opacity"></div>
-      <div className="outter fadeIn animated">
+      <div className="outter fadeIn animated" style={{zIndex:1}}>
         <div className="middle">
           <div className="inner" style={{maxWidth:700}}>
             <div className="row contact-me">

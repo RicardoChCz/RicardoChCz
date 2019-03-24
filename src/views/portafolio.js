@@ -16,15 +16,15 @@ var portafolio=[
    "link":"http://monasff.com/"
   },
   {"title":"Piñon 360",
-   "description":"Mockup of web app Pinon 360",
+   "description":"Mockup of Web App Pinon 360",
    "type":"desktop",
    "image":"/images/pinon.png",
    "subtitle":"Responsive Web App",
-   "details":"Pure HTML, CSS, JS, mockup for web app dedicated to manage Health Care Information for Hospitals in USA.",
-   "link":"http://ricardochcz.com/test/Pinon360"
+   "details":"Pure HTML, CSS, JS, mockup for Web App dedicated to manage Health Care Information for Hospitals in USA.",
+   "link":"http://demo.ricardochcz.com/pinon360"
   },
   {"title":"About Me",
-   "description":"This awesome About me web page",
+   "description":"This awesome About me Web Page",
    "type":"desktop",
    "image":"/images/ricardochcz.png",
    "subtitle":"Responsive Web Page",
@@ -36,7 +36,7 @@ var portafolio=[
    "type":"desktop",
    "image":"/images/partners.png",
    "subtitle":"Responsive Web App",
-   "details":"Collaboration. Mock up in HTML, CSS, JS, node.js for Weenjoy Partners Web platform. API implementation. (Currently in maintenance)",
+   "details":"Collaboration. Mock up in HTML, CSS, JS, node.js for Weenjoy Partners Web App. API implementation. (Currently in maintenance)",
    "link":"http://partners.weenjoy.com/"
   },
   {"title":"WIN platform",
@@ -44,7 +44,7 @@ var portafolio=[
    "type":"desktop",
    "image":"/images/win.png",
    "subtitle":"Responsive Web App",
-   "details":"Collaboration. Mock up in React.js and node.js for WIN Web platform. API implementation. (Currently in maintenance)",
+   "details":"Collaboration. Mock up in React.js and Node.js for WIN Web App. API implementation. (Currently in maintenance)",
    "link":"http://win.weenjoy.com/"
   },
   {"title":"Weenjoy Site",
@@ -52,7 +52,7 @@ var portafolio=[
     "type":"desktop",
     "image":"/images/weenjoy.png",
     "subtitle":"Responsive Web Page",
-    "details":"Collaboration. Mock up in Vue.js for SPA with SSR (nuxt) to be SEO friendly. (Currently on develop)",
+    "details":"Collaboration. SPA in Vue.js with SSR (nuxt) and SEO implementation. (Currently on develop)",
     "link":"http://weenjoy.com/"
    },
 ]
