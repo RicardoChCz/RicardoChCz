@@ -33,7 +33,7 @@ class Contact extends Component {
                   </a>
                 </div>
                 <div className="col-sm-4">
-                  <a href="http://blog.ricardochcz.com/">
+                  <a href="https://blog.ricardochcz.com/">
                     <div className="card">
                       <h5> Blog </h5>
                       <p> Miscelánea y Matemáticas</p>
